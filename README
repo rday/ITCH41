@@ -1,0 +1,39 @@
+ITCH 4.1 Implementation
+Ryan Day
+~~~~~~~~~~~~~~~~~~~~~~~
+
+This is a python (2.6) implementation of the NASDAQ ITCH 4.1 specification.
+The spec can be found at http://nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTV-ITCH-V4_1.pdf
+
+This is meant to be an educational project. While this can process about 8
+gigs (on my quadcore anyways) in a little over an hour, the message queue 
+just is not fast enough to handle the information to make nanosecond speed 
+decisions. I still hope that it can serve as a guide to how ITCH data is 
+received, and allow users to test ideas based on historical information.
+
+- ITCH Messages
+The messages should be created by calling the factory method with a properly
+formatted ITCH message. You will have the correct object for that message
+returned to you. All character codes can be expanded using the dictionaries in
+the parent ITCHMessage class for your convinience.
+
+- ITCH Controller
+The ITCH Controller runs as a separate process that accepts message through a
+queue. This is to keep your input source decoupled from the controller. When
+a message is posted to the queue, the controller will use the factory method
+to get the proper object type and then search for a handler for that object
+type. The handler(if any exists) will be called, and the message will be passed
+to that handler.
+
+- Examples
+The example file is a quick app I threw together to read historical data files
+from ftp://emi.nasdaq.com/ITCH/. It gives a good overview of how the handlers
+work and how you can make decisions based on messages.
+
+Errata
+I'd be interested in improving on this and trying to make it faster. I think
+that a real implementation will have to be done in a different language though.
+Please give me any feedback!
+
+Ryan Day
+ryanday2@gmail.com
