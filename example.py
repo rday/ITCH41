@@ -2,6 +2,11 @@ from ITCHController import ITCHController
 import ITCHMessages
 from multiprocessing import Process, Queue
 
+'''
+This is a example of how to use the ITCHController and ITCHMessages classes.
+
+Ryan Day
+ryanday2@gmail.com
 
 '''
 The next few procedures are example handlers. They will be registered

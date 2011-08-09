@@ -4,6 +4,8 @@ import struct
 This is a quick implementation of ITCH 4.1 according to
 http://nasdaqtrader.com/content/technicalsupport/specifications/dataproducts/NQTV-ITCH-V4_1.pdf
 
+Ryan Day
+ryanday2@gmail.com
 '''
 
 class ITCHMessage(object):

@@ -9,6 +9,9 @@ from multiprocessing import Process, Queue
 The ITCH Controller is meant to run as a separate process to increase
 speed. Again, this is most likely too slow for a production system. But
 it is pretty quick for setting up tests against hostorical data.
+
+Ryan Day
+ryanday2@gmail.com
 '''
 
 class ITCHController(Process):
