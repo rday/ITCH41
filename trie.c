@@ -75,18 +75,18 @@ int main()
     alca->price = 30;
     cstr->price = 40;
 
-    add(root, "AAPL", aapl);
-    add(root, "CFP", cfp);
-    add(root, "ALCA", alca);
-    add(root, "CSTR", cstr);
+    trie_set(root, "AAPL", aapl);
+    trie_set(root, "CFP", cfp);
+    trie_set(root, "ALCA", alca);
+    trie_set(root, "CSTR", cstr);
 
     struct stock* s;
 
-    s = get(root, "AAPL");
+    s = trie_get(root, "AAPL");
     printf("AAPL %d\n", s->price);
     cfp->price = 5;
-    add(root, "AAPL", cfp);
-    s = get(root, "AAPL");
+    trie_set(root, "AAPL", cfp);
+    s = trie_get(root, "AAPL");
     printf("AAPL %d\n", s->price);
 }
 
