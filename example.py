@@ -8,7 +8,6 @@ This is a example of how to use the ITCHController and ITCHMessages classes.
 Ryan Day
 ryanday2@gmail.com
 
-'''
 The next few procedures are example handlers. They will be registered
 with the ITCH Controller and called whenever an appropriate message
 is received
@@ -68,8 +67,8 @@ Our controller is now waiting for messages. So we can read
 a data file (ftp://emi.nasdaq.com/ITCH/) and start processing
 messages.
 '''
-cachesize = 16384000*4
-data = file("DATAFILE", "rb")
+cachesize = 1024*4
+data = file("partial", "rb")
 haveData = True
 ptr = buflen = 0
 dataBuffer = data.read(cachesize)
