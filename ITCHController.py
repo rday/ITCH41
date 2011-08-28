@@ -62,5 +62,4 @@ class ITCHController(Process):
             messageData = self.messageQueue.get()
             itch = self.ItchFactory(messageData)
             if type(itch) in self.handlers:
-                p = Thread(target=self.handlers[type(itch)],args=(itch,))
-                p.run()
+                self.handlers[type(itch)](itch)

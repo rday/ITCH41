@@ -46,7 +46,7 @@ a data file (ftp://emi.nasdaq.com/ITCH/) and start processing
 messages.
 '''
 cachesize = 16384000*4
-data = file("S030811-v41.txt", "rb")
+data = file("partial", "rb")
 haveData = True
 ptr = buflen = 0
 dataBuffer = data.read(cachesize)
